@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: mylib
+Version: 0.1
+Summary: A simple demo library
+Author: Ahmadreza Ghanaatian
+Author-email: you@example.com
+Keywords: demo,mylib
+Classifier: Programming Language :: Python :: 3
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: keywords
+Dynamic: summary
