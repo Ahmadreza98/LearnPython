@@ -17,7 +17,7 @@ class Animal:
     def __str__(self):
         return (f"The {self.name} is a animal, him species is "
                 f"{self.species} and age, {self.age} year old. "
-                f"The Lion's sound is '{self.sound}'.")
+                f"The {self.name}'s sound is '{self.sound}'.")
 
 
 class Bird(Animal):
@@ -27,11 +27,13 @@ class Bird(Animal):
         super().__init__(name, species, age, sound)
 
     def make_sound(self):
-        return f"CHIK! CHIK!"
+        return self.sound
 
 
 lion = Animal("Lion", "Mammal", 12, "AHHHHHH")
+crow = Bird("Crow", "Birds", "1.8", "GHAR! GHAR!")
 
 print(lion)
+print(crow)
 print(lion.zoo_name)
 print(lion.info())
