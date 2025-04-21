@@ -5,8 +5,8 @@ def divide(a, b):
 
 while True:
     try:
-        num1 = int(input("Enter first number: "))
-        num2 = int(input("Enter second number: "))
+        num1 = int(float(input("Enter first number: ")))
+        num2 = int(float(input("Enter second number: ")))
         print("Result", divide(num1, num2))
     except ZeroDivisionError as e:
         print(f"The Error is: {e}")
