@@ -7,9 +7,3 @@ df["Unit Total"] = df["Price"] * df["Quantity"]
 df['Total'] = df["Unit Total"].cumsum()
 
 df.to_csv("finally.csv", index=False)
-
-
-
-
-
-
