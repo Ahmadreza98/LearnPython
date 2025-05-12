@@ -3,7 +3,9 @@ import requests
 # import beautifulSoup4
 import bs4
 
-# URL Test : https://en.wikipedia.org/wiki/Python_(programming_language)
+# URL = "https://www.isna.ir/"
+
+
 #url = "https://en.wikipedia.org/wiki/Python_(programming_language)"
 
 
@@ -27,8 +29,7 @@ class HTML:
         self.container = bs4.BeautifulSoup(self.url.text, "html.parser")
 
     def get_all_header(self):
-        all_header = self.container.find_all("div", class_="mw-heading "
-                                                           "mw-heading2")
+        all_header = self.container.find_all("div", class_="desc")
         return all_header
 
     def get_all_img(self):
@@ -36,13 +37,18 @@ class HTML:
         return all_img
 
     def title(self):
-        tle = self.container.title.text
-        return tle
+        title = self.container.title.text
+        return title
 
-url = input("Enter URL: ")
 
-html = HTML(url)
+URL = input("Enter URL: ")
 
-print(html.title())
-print(html.get_all_header())
-print(html.get_all_img())
+html = HTML(URL)
+
+print("Title: ", html.title())
+
+for x in html.get_all_header():
+    print("HEADER: ", x.find("a").text)
+
+for x in html.get_all_img():
+    print("LINK_IMG: ", x.attrs["src"])
